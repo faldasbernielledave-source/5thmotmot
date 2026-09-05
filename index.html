@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❤️ Happy 5th Monthsary ❤️</title>
+<meta name="theme-color" content="#ff4da6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+.separate-music-list{
+  width:min(100%,980px);
+  margin:28px auto 0;
+  display:grid;
+  gap:18px;
+}
+.separate-music-item{
+  display:grid;
+  grid-template-columns:88px 1fr auto;
+  align-items:center;
+  gap:18px;
+  padding:14px 16px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.055);
+  backdrop-filter:blur(12px);
+  text-align:left;
+  transition:.25s ease;
+}
+.separate-music-item:hover,.separate-music-item.active{
+  transform:translateY(-2px);
+  border-color:rgba(255,182,213,.55);
+  background:rgba(255,255,255,.09);
+}
+.separate-music-cover{
+  width:88px; height:88px; object-fit:cover; border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+}
+.separate-music-copy{min-width:0;}
+.separate-music-label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;opacity:.65;margin-bottom:5px;}
+.separate-music-title{font-size:1.05rem;font-weight:800;margin:0 0 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.separate-music-artist{font-size:.86rem;opacity:.72;margin:0;}
+.separate-music-play{
+  width:52px;height:52px;border:0;border-radius:50%;cursor:pointer;
+  display:grid;place-items:center;font-size:1.1rem;
+  background:rgba(255,255,255,.12);color:inherit;
+  transition:.2s ease;
+}
+.separate-music-play:hover{transform:scale(1.08);}
+.separate-music-item.active .separate-music-play{background:rgba(255,182,213,.25);}
+.separate-music-upload{text-align:center;margin-top:20px;}
+@media(max-width:600px){
+  .separate-music-item{grid-template-columns:68px 1fr 44px;gap:12px;padding:11px;}
+  .separate-music-cover{width:68px;height:68px;border-radius:13px;}
+  .separate-music-play{width:44px;height:44px;}
+}
+</style>
+</head>
+<body>
+<div id="loader">
+<div class="loader-stars"></div>
+<div class="loader-content">
+<div class="loader-heart">❤️</div>
+<h1>Loading Our Love Story...</h1>
+<p>Every beautiful memory begins with one heartbeat.</p>
+<div class="loading-bar"><div class="loading-fill"></div></div>
+</div>
+</div>
+<div id="galaxy">
+<canvas id="stars"></canvas>
+<canvas id="nebula"></canvas>
+<canvas id="petals"></canvas>
+<canvas id="fireworks"></canvas>
+</div>
+<div class="ambient-glow glow1"></div>
+<div class="ambient-glow glow2"></div>
+<div class="ambient-glow glow3"></div>
+<section id="intro">
+<div class="sparkles"></div>
+<div id="envelopeContainer">
+<div id="envelope">
+<div class="envelope-back"></div>
+<div class="envelope-letter">
+<h2>💌</h2>
+<p>For My Love</p>
+</div>
+<div class="envelope-flap"></div>
+</div>
+</div>
+<h1 class="intro-title">Happy 5th Monthsary</h1>
+<p class="intro-text">Click the envelope to open our love story.</p>
+<button id="openLetter">Open My Heart ❤️</button>
+</section>
+<main id="mainContent">
+<section id="hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<h2 class="hero-subtitle">Forever & Always</h2>
+<h1 class="hero-title">BERNIELLE<span>❤️</span>MAGARETTE</h1>
+<p class="hero-description">
+Five months of us...
+A thousand little smiles...
+Countless memories...
+And many more tomorrows...
+I still choose you.
+Again.
+And again.
+Forever. ❤️
+</p>
+<div id="loveCounter">
+<div class="counter-box"><span id="years">0</span><label>Years</label></div>
+<div class="counter-box"><span id="months">0</span><label>Months</label></div>
+<div class="counter-box"><span id="days">0</span><label>Days</label></div>
+<div class="counter-box"><span id="hours">0</span><label>Hours</label></div>
+<div class="counter-box"><span id="minutes">0</span><label>Minutes</label></div>
+<div class="counter-box"><span id="seconds">0</span><label>Seconds</label></div>
+</div>
+<div class="hero-buttons">
+<button id="scrollLetter">Read My Letter 💌</button>
+<button id="playMusic">Play Our Song 🎵</button>
+</div>
+<div class="scroll-indicator"><span></span></div>
+</div>
+</section>
+<section id="letterSection">
+<div class="section-title">
+<div class="mini-badge">CHAPTER 05</div><h2>💌 My Letter To You</h2>
+<p>Every page carries a piece of my heart.</p>
+</div>
+<div id="book">
+<div class="book-cover">
+<h1>❤️</h1>
+<h2>Our Love Story</h2>
+<p>Click to Open</p>
+</div>
+<div class="book-pages">
+<div class="page">
+<h3>My Dearest Love,</h3>
+<div id="typewriter"></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gallerySection">
+  <div class="section-title">
+    <div class="mini-badge">05 MONTHS • 05+ MEMORIES</div>
+    <h2>📸 Our Beautiful Memories</h2>
+    <p>Click a photo, swipe through the memories, and add new ones as we make them. 💗</p>
+  </div>
+
+  <div class="gallery-actions">
+    <button class="memory-action" id="shuffleMemories">🎲 Surprise Me</button>
+    <label class="memory-action upload-memory" for="photoUploader">➕ Add More Photos</label>
+    <input id="photoUploader" type="file" accept="image/*" multiple hidden>
+  </div>
+
+  <div class="memory-progress">
+    <span id="memoryCount">10 memories</span>
+    <span>♡ keep making more</span>
+  </div>
+
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="photo-card" data-caption="Our First Picture ❤️"><img src="images/photo1.jpg" alt="Our first picture"><div class="photo-overlay"><small>MEMORY 01</small><span>Our First Picture ❤️</span></div></div>
+    <div class="photo-card" data-caption="My Favorite Smile 😊"><img src="images/photo2.jpg" alt="Favorite smile"><div class="photo-overlay"><small>MEMORY 02</small><span>My Favorite Smile 😊</span></div></div>
+    <div class="photo-card" data-caption="Forever Together 💕"><img src="images/photo3.jpg" alt="Together"><div class="photo-overlay"><small>MEMORY 03</small><span>Forever Together 💕</span></div></div>
+    <div class="photo-card" data-caption="Beautiful Memories 🌸"><img src="images/photo4.jpg" alt="Beautiful memories"><div class="photo-overlay"><small>MEMORY 04</small><span>Beautiful Memories 🌸</span></div></div>
+    <div class="photo-card" data-caption="My Happy Place 🌷"><img src="images/photo5.jpg" alt="Happy place"><div class="photo-overlay"><small>MEMORY 05</small><span>My Happy Place 🌷</span></div></div>
+    <div class="photo-card" data-caption="You & Me ❤️"><img src="images/photo6.jpg" alt="You and me"><div class="photo-overlay"><small>MEMORY 06</small><span>You & Me ❤️</span></div></div>
+    <div class="photo-card" data-caption="A Little Chapter of Us ✨"><img src="images/cover.jpg" alt="A chapter of us"><div class="photo-overlay"><small>MEMORY 07</small><span>A Little Chapter of Us ✨</span></div></div>
+    <div class="photo-card" data-caption="Our Softest Moments 🌙"><img src="images/photo7.jpg" alt="Soft moments"><div class="photo-overlay"><small>MEMORY 08</small><span>Our Softest Moments 🌙</span></div></div>
+    <div class="photo-card" data-caption="One Day, One Memory 💞"><img src="images/cover2.jpg" alt="One memory"><div class="photo-overlay"><small>MEMORY 09</small><span>One Day, One Memory 💞</span></div></div>
+    <div class="photo-card" data-caption="Still Choosing You 💗"><img src="images/cover3.jpg" alt="Still choosing you"><div class="photo-overlay"><small>MEMORY 10</small><span>Still Choosing You 💗</span></div></div>
+    <div class="photo-card" data-caption=" Memories ❤️"><img src="images/photo8.jpg" alt=" Memories"><div class="photo-overlay"><small>MEMORY 11 </small><span> Memories❤️</span></div></div>
+    <div class="photo-card" data-caption=" Memories ❤️"><img src="images/photo9.jpg" alt=" Memories"><div class="photo-overlay"><small>MEMORY 12 </small><span> Memories❤️</span></div></div>
+	<div class="photo-card" data-caption=" Memories ❤️"><img src="images/photo10.jpg" alt=" Memories"><div class="photo-overlay"><small>MEMORY 13 </small><span> Memories❤️</span></div></div>
+	<div class="photo-card" data-caption=" Memories ❤️"><img src="images/photo11.jpg" alt=" Memories"><div class="photo-overlay"><small>MEMORY 14 </small><span> Memories❤️</span></div></div>
+	<div class="photo-card" data-caption=" Memories ❤️"><img src="images/photo12.jpg" alt=" Memories"><div class="photo-overlay"><small>MEMORY 15 </small><span> Memories❤️</span></div></div>
+  </div>
+</section>
+<section id="reasonsSection">
+  <div class="section-title">
+    <div class="mini-badge">A LITTLE LOVE GAME</div>
+    <h2>💖 Tap A Reason</h2>
+    <p>There are probably a million reasons… here are a few of mine.</p>
+  </div>
+  <div class="reason-game">
+    <div class="reason-orb" id="reasonOrb">💗</div>
+    <h3 id="reasonNumber">Reason #1</h3>
+    <p id="reasonText">Your smile makes my whole world brighter.</p>
+    <button class="game-btn" id="nextReason">Give Me Another 💌</button>
+    <div class="reason-dots" id="reasonDots"></div>
+  </div>
+</section>
+<section id="quizSection">
+  <div class="section-title">
+    <div class="mini-badge">A LITTLE GUESSING GAME</div>
+    <h2>🧠 Guess Who Loves You Most</h2>
+    <p>Tap each card to flip it and reveal the answer.</p>
+  </div>
+  <div class="quiz-grid">
+    <div class="quiz-card" data-flipped="false">
+      <div class="quiz-card-inner">
+        <div class="quiz-face quiz-front"><span class="quiz-icon">❓</span><p>Who thinks about you the moment they wake up?</p></div>
+        <div class="quiz-face quiz-back"><span class="quiz-icon">☀️</span><p>Me. Every single morning.</p></div>
+      </div>
+    </div>
+    <div class="quiz-card" data-flipped="false">
+      <div class="quiz-card-inner">
+        <div class="quiz-face quiz-front"><span class="quiz-icon">❓</span><p>How many months have we loved each other?</p></div>
+        <div class="quiz-face quiz-back"><span class="quiz-icon">📅</span><p>5 whole months, and counting.</p></div>
+      </div>
+    </div>
+    <div class="quiz-card" data-flipped="false">
+      <div class="quiz-card-inner">
+        <div class="quiz-face quiz-front"><span class="quiz-icon">❓</span><p>What's my favorite place in the world?</p></div>
+        <div class="quiz-face quiz-back"><span class="quiz-icon">🏡</span><p>Wherever you are.</p></div>
+      </div>
+    </div>
+    <div class="quiz-card" data-flipped="false">
+      <div class="quiz-card-inner">
+        <div class="quiz-face quiz-front"><span class="quiz-icon">❓</span><p>What do I want for our next monthsary?</p></div>
+        <div class="quiz-face quiz-back"><span class="quiz-icon">💌</span><p>Just more time with you.</p></div>
+      </div>
+    </div>
+    <div class="quiz-card" data-flipped="false">
+      <div class="quiz-card-inner">
+        <div class="quiz-face quiz-front"><span class="quiz-icon">❓</span><p>Who's the luckiest person alive?</p></div>
+        <div class="quiz-face quiz-back"><span class="quiz-icon">🍀</span><p>Me, for having you.</p></div>
+      </div>
+    </div>
+    <div class="quiz-card" data-flipped="false">
+      <div class="quiz-card-inner">
+        <div class="quiz-face quiz-front"><span class="quiz-icon">❓</span><p>How long will I love you?</p></div>
+        <div class="quiz-face quiz-back"><span class="quiz-icon">♾️</span><p>Forever. No expiration date.</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="quiz-score">Cards flipped: <span id="quizFlippedCount">0</span> / 6</p>
+</section>
+<section id="fiveThings">
+  <div class="section-title">
+    <div class="mini-badge">OUR 5TH MONTH</div>
+    <h2>🌷 Five Little Things</h2>
+    <p>Tap each heart to reveal a tiny message from me.</p>
+  </div>
+  <div class="five-grid">
+    <button class="five-card" data-message="Thank you for making ordinary days feel special. ❤️"><span>01</span><b>Ordinary Days</b><em>tap me</em></button>
+    <button class="five-card" data-message="Your laugh is one of my favorite sounds in the whole world. 🥹"><span>02</span><b>Your Laugh</b><em>tap me</em></button>
+    <button class="five-card" data-message="I love how we can be silly together and still feel completely safe. 😂💕"><span>03</span><b>Our Chaos</b><em>tap me</em></button>
+    <button class="five-card" data-message="I am proud of you, and I will keep cheering for you. 🌟"><span>04</span><b>Your Dreams</b><em>tap me</em></button>
+    <button class="five-card" data-message="Five months down, and I still want more chapters with you. 📖💗"><span>05</span><b>More Chapters</b><em>tap me</em></button>
+  </div>
+  <div class="tiny-toast" id="tinyToast">💗</div>
+</section>
+
+<section id="loveMeter">
+  <div class="section-title">
+    <div class="mini-badge">100% HONEST</div>
+    <h2>💘 How Much Do I Love You?</h2>
+    <p>Tap the heart until the meter gives up trying to measure it.</p>
+  </div>
+  <div class="meter-shell">
+    <div class="meter-track"><div class="meter-fill" id="loveMeterFill"></div></div>
+    <div class="meter-value" id="loveMeterValue">0%</div>
+    <button class="heart-tap" id="heartTap">❤️ TAP MY HEART ❤️</button>
+    <p id="meterMessage">Loading the very first heartbeat…</p>
+  </div>
+</section>
+
+<section id="wheelSection">
+  <div class="section-title">
+    <div class="mini-badge">SPIN FOR FUN</div>
+    <h2>🎡 Spin For Our Next Date</h2>
+    <p>Let fate pick our next monthsary adventure.</p>
+  </div>
+  <div class="wheel-wrap">
+    <div class="wheel-pointer">▼</div>
+    <div id="loveWheel" class="love-wheel">
+      <span>Movie Night 🎬</span>
+      <span>Beach Trip 🏖️</span>
+      <span>Home-Cooked Dinner 🍝</span>
+      <span>Stargazing 🌌</span>
+      <span>Café Date ☕</span>
+      <span>Road Trip 🚗</span>
+      <span>Picnic 🧺</span>
+      <span>Dance At Home 💃</span>
+    </div>
+  </div>
+  <button id="spinWheelBtn" class="game-btn">Spin the Wheel 🎡</button>
+  <p id="wheelResult"></p>
+</section>
+
+<section id="musicRoom">
+  <div class="section-title">
+    <div class="mini-badge">OUR LITTLE JUKEBOX</div>
+    <h2>🎧 Music For Us</h2>
+    <p>Each song has its own cover and details. Pick any one you want to play. ❤️</p>
+  </div>
+  <div class="separate-music-list" id="playlistList"></div>
+  <div class="separate-music-upload">
+    <label class="memory-action upload-memory music-upload" for="musicUploader">🎶 Add Your Own Songs</label>
+    <input id="musicUploader" type="file" accept="audio/*" multiple hidden>
+  </div>
+</section>
+<section id="giftSection">
+<div class="gift-box">
+<div class="gift-lid"></div>
+<div class="gift-body">🎁</div>
+</div>
+<p>Click the gift for a surprise ❤️</p>
+</section>
+<section id="proposal">
+<div class="proposal-card">
+<h1>💍</h1>
+<div class="mini-badge">STILL CHOOSING YOU</div><h2>I Promise...</h2>
+<p>
+I promise to keep choosing you.
+To stand beside you.
+To support your dreams.
+To be there always even you have a happy days,
+and the difficult ones.
+No matter where life takes us,
+my heart will always belong to you.
+</p>
+<button id="yesBtn">Forever ❤️</button>
+</div>
+</section>
+<section id="celebrate">
+<h2>🎉 Happy Monthsary 🎉</h2>
+<p>
+Five months with you, and my favorite part is that our story is still just beginning.
+Thank you for every laugh, every hug, every silly moment, every photo, and every little way you make life sweeter.
+Happy 5th Monthsary, Babie. ❤️
+</p>
+<button id="celebrateBtn">Celebrate With Me 🎆</button>
+</section>
+<footer>
+<h2>Made With ❤️</h2>
+<p>
+For the love of my life.
+Happy 5th Monthsary.
+I love you more with every chapter.
+</p>
+</footer>
+</main>
+<div id="musicPlayer">
+<button type="button" id="minimizeBtn" title="Minimize" aria-label="Minimize player">−</button>
+<div class="player-top">
+<div class="music-cover">
+<img src="images/cover.jpg" alt="Album Cover">
+</div>
+<div class="music-info">
+<div class="now-playing">Now Playing</div>
+<h3 id="songTitle">Our Song</h3>
+<p id="artistName">Artist Name</p>
+</div>
+</div>
+<div class="progress"><div class="progress-fill"></div></div>
+<div class="time-row"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+<div class="music-controls">
+<button id="prevSong">⏮</button>
+<button id="playPause">▶</button>
+<button id="nextSong">⏭</button>
+</div>
+<div class="volume-row"><span>🔈</span><input type="range" class="volume-slider" min="0" max="100" value="80"><span>🔊</span></div>
+<div class="equalizer"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+<div id="lightbox">
+<div class="lightboxGlow"></div>
+<div class="lightbox-close">✕</div>
+<div class="lightbox-prev">‹</div>
+<img id="lightboxImage" src="" alt="">
+<div class="lightbox-next">›</div>
+<div id="lightboxCaption"></div>
+<div id="lightboxCounter"></div>
+</div>
+<div id="endingScreen">
+<h1 id="endingTitle">❤️ Happy Monthsary ❤️</h1>
+<div id="endingMessage"></div>
+<button id="endingButton">Replay Our Story 🔁</button>
+</div>
+<script src="script.js"></script>
+</body>
